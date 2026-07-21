@@ -361,8 +361,8 @@ hr {
 }
 
 .print-logo {
-  width: 100px;
-  height: 40.4px;
+  width: 49.3mm;
+  height: 19.9mm;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -374,8 +374,9 @@ hr {
 
 .print-title {
   font-weight: 700;
-  font-size: 14px;
+  font-size: 14pt;
   font-family: 'Times New Roman', Times, serif;
+  line-height: 1.15;
 }
 
 .print-meta-table {
@@ -383,11 +384,13 @@ hr {
   border-collapse: collapse;
   margin-bottom: 10px;
   font-family: 'Times New Roman', Times, serif;
-  font-size: 12px;
+  font-size: 12pt;
+  line-height: 1.15;
 }
 
 .print-meta-table td {
-  padding: 1px 6px 1px 0;
+  padding: 0 6px 0 0;
+  height: 5mm;
   vertical-align: top;
 }
 
@@ -407,7 +410,8 @@ hr {
 .print-main-table td {
   border: 1px solid #000;
   padding: 3px 4px;
-  font-size: 12px;
+  font-size: 12pt;
+  line-height: 1.15;
   text-align: center;
   word-wrap: break-word;
 }
@@ -429,7 +433,8 @@ hr {
   border-collapse: collapse;
   margin-top: 8px;
   font-family: 'Times New Roman', Times, serif;
-  font-size: 12px;
+  font-size: 12pt;
+  line-height: 1.15;
 }
 
 .print-signature-table td {
@@ -456,7 +461,8 @@ hr {
   width: 28%;
   border-collapse: collapse;
   font-family: 'Times New Roman', Times, serif;
-  font-size: 12px;
+  font-size: 12pt;
+  line-height: 1.15;
 }
 
 .print-tim-distribusi td {
