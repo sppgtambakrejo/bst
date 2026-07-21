@@ -6,5 +6,5 @@ import react from '@vitejs/plugin-react'
 // Kalau dideploy ke domain sendiri (bukan github.io/nama-repo), base bisa diganti '/'
 export default defineConfig({
   plugins: [react()],
-  base: '/mbg-surat-jalan/',
+  base: '/bst/',
 })
