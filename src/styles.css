@@ -1,0 +1,506 @@
+:root {
+  --ink: #1a2233;
+  --paper: #ffffff;
+  --muted: #6b7280;
+  --line: #d7dbe2;
+  --accent: #0f2f5f;
+  --accent-soft: #eef2f8;
+  --danger: #b3261e;
+  font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f3f4f7;
+  color: var(--ink);
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ---------- App shell ---------- */
+
+.app-shell {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 1rem 3rem;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 0;
+}
+
+.app-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+
+.tabs {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--line);
+  margin-bottom: 1.2rem;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--muted);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+.tabs button.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.card h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.card h3 {
+  font-size: 0.95rem;
+  margin: 1rem 0 0.3rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.7rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #33415c;
+}
+
+.field input,
+.field select {
+  font-weight: 400;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0 1rem;
+}
+
+button {
+  font-family: inherit;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-plain,
+.btn-icon {
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.88rem;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.btn-secondary {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent-soft);
+}
+
+.btn-plain {
+  background: none;
+  color: var(--muted);
+}
+
+.btn-icon {
+  background: none;
+  color: var(--danger);
+  padding: 0.3rem 0.5rem;
+}
+
+.btn-icon.danger {
+  color: var(--danger);
+}
+
+.actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 1.4rem 0;
+}
+
+/* ---------- Sekolah editor ---------- */
+
+.kelas-editor-head,
+.kelas-editor-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2.2rem;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.kelas-editor-head {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.kelas-editor-row input {
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  width: 100%;
+}
+
+.school-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.school-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.school-item-actions {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- Rows editor (surat jalan form) ---------- */
+
+.rows-editor {
+  overflow-x: auto;
+}
+
+.rows-editor-head,
+.rows-editor-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1.6fr 2rem;
+  gap: 0.4rem;
+  align-items: center;
+  margin-bottom: 0.35rem;
+  min-width: 620px;
+}
+
+.rows-editor-head {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.rows-editor-row input {
+  padding: 0.35rem 0.45rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  width: 100%;
+  font-size: 0.88rem;
+}
+
+.total-line {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+}
+
+/* ---------- Daftar surat jalan ---------- */
+
+.filter-tanggal {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.filter-tanggal input {
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.list-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.checkbox-line {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+}
+
+.doc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.doc-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+.doc-item-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.doc-item-actions {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- Print view (harus mengikuti format dokumen asli) ---------- */
+
+.print-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.print-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.2rem;
+}
+
+.print-page {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 18mm 16mm;
+  margin: 0 auto 2rem;
+  width: 210mm;
+  min-height: 297mm;
+  font-size: 12.5px;
+  color: #000;
+}
+
+.print-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+
+.print-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.print-header-text {
+  text-align: center;
+  flex: 1;
+}
+
+.print-title {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.print-subtitle {
+  font-weight: 700;
+  font-size: 12.5px;
+}
+
+.print-meta-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 14px;
+}
+
+.print-meta-table td {
+  padding: 1.5px 4px;
+  vertical-align: top;
+  font-size: 12.5px;
+}
+
+.meta-label {
+  width: 26%;
+  white-space: nowrap;
+}
+
+.meta-colon {
+  width: 8px;
+}
+
+.meta-value {
+  width: 33%;
+}
+
+.print-main-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.print-main-table th,
+.print-main-table td {
+  border: 1px solid #000;
+  padding: 4px 5px;
+  font-size: 12px;
+  text-align: left;
+}
+
+.print-main-table th {
+  text-align: center;
+  font-weight: 700;
+  background: #f0f0f0;
+}
+
+.col-no,
+.col-num {
+  text-align: center;
+  width: 60px;
+}
+
+.total-label {
+  text-align: right;
+  font-weight: 700;
+}
+
+.total-value {
+  font-weight: 700;
+}
+
+.print-signature-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.print-signature-bottom {
+  margin-top: 30px;
+}
+
+.print-signature-table td {
+  width: 33.33%;
+  padding: 2px 6px;
+  font-size: 12.5px;
+  vertical-align: top;
+}
+
+.sig-space-row td {
+  height: 46px;
+}
+
+.sig-name {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* ---------- Print media rules ---------- */
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-wrapper {
+    max-width: none;
+    padding: 0;
+  }
+
+  .print-page {
+    border: none;
+    margin: 0;
+    width: auto;
+    min-height: auto;
+    page-break-after: always;
+  }
+
+  .print-page:last-child {
+    page-break-after: auto;
+  }
+
+  @page {
+    size: A4;
+    margin: 14mm 12mm;
+  }
+}
