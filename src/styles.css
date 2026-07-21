@@ -354,22 +354,20 @@ hr {
 }
 
 .print-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
+  display: block;
   margin-bottom: 4px;
 }
 
 .print-logo {
+  display: block;
   width: 49.3mm;
   height: 19.9mm;
   object-fit: contain;
-  flex-shrink: 0;
+  margin-bottom: 2px;
 }
 
 .print-header-text {
   text-align: center;
-  flex: 1;
 }
 
 .print-title {
@@ -458,7 +456,7 @@ hr {
 }
 
 .print-tim-distribusi {
-  width: 28%;
+  width: 30.3%;
   border-collapse: collapse;
   font-family: 'Times New Roman', Times, serif;
   font-size: 12pt;
@@ -467,6 +465,7 @@ hr {
 
 .print-tim-distribusi td {
   padding: 1px 4px;
+  text-align: center;
 }
 
 .print-tim-distribusi .sig-space-row td {
