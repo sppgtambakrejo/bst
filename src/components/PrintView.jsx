@@ -37,11 +37,19 @@ export default function PrintView({ docs, schools, sppg, onBack }) {
             <tbody>
               <tr>
                 <td className="meta-label">Kepada</td>
-                <td className="meta-value">: {schoolName(doc.sekolahId)}</td>
+                <td className="meta-value">
+                  <strong>: {schoolName(doc.sekolahId)}</strong>
+                </td>
                 <td className="meta-label">Hari, Tanggal</td>
                 <td className="meta-value">
                   : {hariIndonesia(doc.tanggal)}, {tanggalIndonesia(doc.tanggal)}
                 </td>
+              </tr>
+              <tr>
+                <td className="meta-label"></td>
+                <td className="meta-value"></td>
+                <td className="meta-label"></td>
+                <td className="meta-value"></td>
               </tr>
               <tr>
                 <td className="meta-label"></td>
