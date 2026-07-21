@@ -136,7 +136,9 @@ export default function PrintView({ docs, schools, sppg, onBack }) {
               <tr>
                 <td className="sig-col sig-name">{sppg.ahliGizi}</td>
                 <td className="sig-col sig-name">{sppg.koordinatorLapangan}</td>
-                <td className="sig-col sig-name">......................................</td>
+                <td className="sig-col sig-name">
+                  <span className="sig-line"></span>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -151,7 +153,9 @@ export default function PrintView({ docs, schools, sppg, onBack }) {
                   <td></td>
                 </tr>
                 <tr>
-                  <td className="sig-name-center">......................................</td>
+                  <td className="sig-name-center">
+                    <span className="sig-line"></span>
+                  </td>
                 </tr>
               </tbody>
             </table>
