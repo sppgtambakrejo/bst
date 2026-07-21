@@ -380,6 +380,7 @@ hr {
 .print-meta-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
   margin-bottom: 8px;
   font-family: 'Times New Roman', Times, serif;
   font-size: 12pt;
@@ -393,6 +394,10 @@ hr {
 }
 
 .meta-label {
+  white-space: nowrap;
+}
+
+.meta-value {
   white-space: nowrap;
 }
 
@@ -416,6 +421,7 @@ hr {
 
 .print-main-table th {
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .total-label {
@@ -429,6 +435,7 @@ hr {
 .print-signature-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
   margin-top: 4px;
   font-family: 'Times New Roman', Times, serif;
   font-size: 12pt;
@@ -451,6 +458,16 @@ hr {
 
 .sig-name {
   font-weight: 700;
+  font-size: 10pt;
+  white-space: nowrap;
+}
+
+.sig-line {
+  display: inline-block;
+  width: 90%;
+  border-bottom: 1px solid #000;
+  height: 1px;
+  line-height: 1;
 }
 
 .tim-distribusi-wrap {
