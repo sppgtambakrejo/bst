@@ -398,7 +398,8 @@ hr {
 }
 
 .meta-value {
-  white-space: nowrap;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .print-main-table {
