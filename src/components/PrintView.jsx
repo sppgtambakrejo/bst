@@ -48,12 +48,6 @@ export default function PrintView({ docs, schools, sppg, onBack }) {
               <tr>
                 <td className="meta-label"></td>
                 <td className="meta-value"></td>
-                <td className="meta-label"></td>
-                <td className="meta-value"></td>
-              </tr>
-              <tr>
-                <td className="meta-label"></td>
-                <td className="meta-value"></td>
                 <td className="meta-label">Waktu Pengiriman</td>
                 <td className="meta-value">: {doc.waktuPengiriman || ''}</td>
               </tr>
@@ -113,9 +107,9 @@ export default function PrintView({ docs, schools, sppg, onBack }) {
 
           <table className="print-signature-table">
             <colgroup>
-              <col style={{ width: '37.3%' }} />
-              <col style={{ width: '32.4%' }} />
-              <col style={{ width: '30.3%' }} />
+              <col style={{ width: '33.34%' }} />
+              <col style={{ width: '33.33%' }} />
+              <col style={{ width: '33.33%' }} />
             </colgroup>
             <tbody>
               <tr>
@@ -123,6 +117,11 @@ export default function PrintView({ docs, schools, sppg, onBack }) {
                   Diperiksa oleh,
                 </td>
                 <td className="sig-col">Diterima Oleh,</td>
+              </tr>
+              <tr className="sig-space-row-small">
+                <td className="sig-col"></td>
+                <td className="sig-col"></td>
+                <td className="sig-col"></td>
               </tr>
               <tr>
                 <td className="sig-col">Ahli Gizi,</td>
