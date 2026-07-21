@@ -355,7 +355,7 @@ hr {
 
 .print-header {
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .print-logo {
@@ -363,7 +363,7 @@ hr {
   width: 49.3mm;
   height: 19.9mm;
   object-fit: contain;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 .print-header-text {
@@ -374,21 +374,21 @@ hr {
   font-weight: 700;
   font-size: 14pt;
   font-family: 'Times New Roman', Times, serif;
-  line-height: 1.15;
+  line-height: 1.1;
 }
 
 .print-meta-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-family: 'Times New Roman', Times, serif;
   font-size: 12pt;
-  line-height: 1.15;
+  line-height: 1.1;
 }
 
 .print-meta-table td {
   padding: 0 6px 0 0;
-  height: 5mm;
+  height: 4.2mm;
   vertical-align: top;
 }
 
@@ -399,7 +399,7 @@ hr {
 .print-main-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
   font-family: 'Times New Roman', Times, serif;
   table-layout: fixed;
 }
@@ -407,9 +407,9 @@ hr {
 .print-main-table th,
 .print-main-table td {
   border: 1px solid #000;
-  padding: 3px 4px;
+  padding: 1.5px 4px;
   font-size: 12pt;
-  line-height: 1.15;
+  line-height: 1.1;
   text-align: center;
   word-wrap: break-word;
 }
@@ -429,10 +429,10 @@ hr {
 .print-signature-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 8px;
+  margin-top: 4px;
   font-family: 'Times New Roman', Times, serif;
   font-size: 12pt;
-  line-height: 1.15;
+  line-height: 1.1;
 }
 
 .print-signature-table td {
@@ -442,7 +442,11 @@ hr {
 }
 
 .sig-space-row td {
-  height: 60px;
+  height: 42px;
+}
+
+.sig-space-row-small td {
+  height: 10px;
 }
 
 .sig-name {
@@ -452,15 +456,15 @@ hr {
 .tim-distribusi-wrap {
   display: flex;
   justify-content: flex-end;
-  margin-top: 24px;
+  margin-top: 14px;
 }
 
 .print-tim-distribusi {
-  width: 30.3%;
+  width: 33.33%;
   border-collapse: collapse;
   font-family: 'Times New Roman', Times, serif;
   font-size: 12pt;
-  line-height: 1.15;
+  line-height: 1.1;
 }
 
 .print-tim-distribusi td {
@@ -469,7 +473,7 @@ hr {
 }
 
 .print-tim-distribusi .sig-space-row td {
-  height: 30px;
+  height: 22px;
 }
 
 .sig-name-center {
@@ -497,8 +501,12 @@ hr {
     border: none;
     margin: 0;
     width: auto;
-    min-height: auto;
+    height: 297mm;
+    min-height: 0;
+    max-height: 297mm;
+    overflow: hidden;
     page-break-after: always;
+    page-break-inside: avoid;
   }
 
   .print-page:last-child {
