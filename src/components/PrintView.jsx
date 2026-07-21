@@ -71,7 +71,7 @@ export default function PrintView({ docs, schools, sppg, onBack }) {
             </colgroup>
             <thead>
               <tr>
-                <th rowSpan={2}>No.</th>
+                <th rowSpan={2} className="th-nowrap">No.</th>
                 <th rowSpan={2}>Kelas</th>
                 <th rowSpan={2}>Jumlah Porsi</th>
                 <th colSpan={2}>Jumlah Alat Makan</th>
