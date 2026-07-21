@@ -345,7 +345,7 @@ hr {
 .print-page {
   background: white;
   border: 1px solid var(--line);
-  padding: 18mm 16mm;
+  padding: 10mm 14.5mm 27.5mm 23mm;
   margin: 0 auto 2rem;
   width: 210mm;
   min-height: 297mm;
@@ -355,16 +355,14 @@ hr {
 
 .print-header {
   display: flex;
-  align-items: center;
-  gap: 14px;
-  border-bottom: 2px solid #000;
-  padding-bottom: 10px;
-  margin-bottom: 16px;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 4px;
 }
 
 .print-logo {
-  width: 64px;
-  height: 64px;
+  width: 100px;
+  height: 40.4px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -376,68 +374,49 @@ hr {
 
 .print-title {
   font-weight: 700;
-  font-size: 16px;
-  letter-spacing: 0.5px;
-}
-
-.print-subtitle {
-  font-weight: 700;
-  font-size: 12.5px;
+  font-size: 14px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .print-meta-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 12px;
 }
 
 .print-meta-table td {
-  padding: 1.5px 4px;
+  padding: 1px 6px 1px 0;
   vertical-align: top;
-  font-size: 12.5px;
 }
 
 .meta-label {
-  width: 26%;
   white-space: nowrap;
-}
-
-.meta-colon {
-  width: 8px;
-}
-
-.meta-value {
-  width: 33%;
 }
 
 .print-main-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  font-family: 'Times New Roman', Times, serif;
+  table-layout: fixed;
 }
 
 .print-main-table th,
 .print-main-table td {
   border: 1px solid #000;
-  padding: 4px 5px;
+  padding: 3px 4px;
   font-size: 12px;
-  text-align: left;
+  text-align: center;
+  word-wrap: break-word;
 }
 
 .print-main-table th {
-  text-align: center;
   font-weight: 700;
-  background: #f0f0f0;
-}
-
-.col-no,
-.col-num {
-  text-align: center;
-  width: 60px;
 }
 
 .total-label {
-  text-align: right;
   font-weight: 700;
 }
 
@@ -448,27 +427,49 @@ hr {
 .print-signature-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
-}
-
-.print-signature-bottom {
-  margin-top: 30px;
+  margin-top: 8px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 12px;
 }
 
 .print-signature-table td {
-  width: 33.33%;
-  padding: 2px 6px;
-  font-size: 12.5px;
+  padding: 1px 4px;
+  text-align: center;
   vertical-align: top;
 }
 
 .sig-space-row td {
-  height: 46px;
+  height: 60px;
 }
 
 .sig-name {
   font-weight: 700;
-  text-decoration: underline;
+}
+
+.tim-distribusi-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.print-tim-distribusi {
+  width: 28%;
+  border-collapse: collapse;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 12px;
+}
+
+.print-tim-distribusi td {
+  padding: 1px 4px;
+}
+
+.print-tim-distribusi .sig-space-row td {
+  height: 30px;
+}
+
+.sig-name-center {
+  text-align: center;
+  font-weight: 700;
 }
 
 /* ---------- Print media rules ---------- */
@@ -501,6 +502,6 @@ hr {
 
   @page {
     size: A4;
-    margin: 14mm 12mm;
+    margin: 10mm 14.5mm 27.5mm 23mm;
   }
 }
