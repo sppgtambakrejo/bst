@@ -454,14 +454,16 @@ hr {
 }
 
 .tim-distribusi-wrap {
-  display: flex;
-  justify-content: flex-end;
+  width: 100%;
   margin-top: 14px;
 }
 
 .print-tim-distribusi {
   width: 33.33%;
+  margin-left: auto;
+  margin-right: 0;
   border-collapse: collapse;
+  table-layout: fixed;
   font-family: 'Times New Roman', Times, serif;
   font-size: 12pt;
   line-height: 1.1;
@@ -501,10 +503,7 @@ hr {
     border: none;
     margin: 0;
     width: auto;
-    height: 297mm;
-    min-height: 0;
-    max-height: 297mm;
-    overflow: hidden;
+    min-height: auto;
     page-break-after: always;
     page-break-inside: avoid;
   }
