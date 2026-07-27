@@ -109,6 +109,17 @@ export function deleteSuratJalan(id) {
   return list
 }
 
+// Ubah tanggal untuk beberapa surat jalan sekaligus (dipilih lewat checkbox
+// di Daftar Surat Jalan). ids = array id surat jalan, tanggalBaru = 'YYYY-MM-DD'.
+export function bulkUpdateTanggalSuratJalan(ids, tanggalBaru) {
+  const idSet = new Set(ids)
+  const list = getSuratJalanList().map((d) =>
+    idSet.has(d.id) ? { ...d, tanggal: tanggalBaru } : d
+  )
+  saveSuratJalanList(list)
+  return list
+}
+
 // ---------- Import / Export cadangan (opsional, biar data tidak hilang) ----------
 
 export function exportAllData() {
