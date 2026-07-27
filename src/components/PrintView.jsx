@@ -1,5 +1,5 @@
 import React from 'react'
-import { hariIndonesia, tanggalIndonesia, sumPorsi } from '../utils.js'
+import { hariIndonesia, tanggalIndonesia, sumPorsiDisplay } from '../utils.js'
 
 export default function PrintView({ docs, schools, sppg, onBack }) {
   const schoolName = (id) => schools.find((s) => s.id === id)?.nama || ''
@@ -87,7 +87,7 @@ export default function PrintView({ docs, schools, sppg, onBack }) {
                 <tr key={r.id}>
                   <td>{idx + 1}</td>
                   <td>{r.kelas}</td>
-                  <td>{r.jumlahPorsi}</td>
+                  <td>{r.jumlahPorsi === 0 ? 0 : r.jumlahPorsi || ''}</td>
                   <td>{r.alatSebelum}</td>
                   <td>{r.alatSesudah}</td>
                   <td>{r.keterangan}</td>
@@ -97,7 +97,7 @@ export default function PrintView({ docs, schools, sppg, onBack }) {
                 <td colSpan={2} className="total-label">
                   Total
                 </td>
-                <td className="total-value">{sumPorsi(doc.rows)}</td>
+                <td className="total-value">{sumPorsiDisplay(doc.rows)}</td>
                 <td></td>
                 <td></td>
                 <td></td>
