@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { uid } from '../db.js'
-import { todayISO, hariIndonesia, sumPorsi } from '../utils.js'
+import { todayISO, hariIndonesia, sumPorsiDisplay } from '../utils.js'
 
 function buildRowsFromSchool(school) {
   return school.kelasList.map((k) => ({
@@ -88,7 +88,7 @@ export default function SuratJalanForm({ schools, editingDoc, onSaved, onCancelE
     if (!editingDoc) resetForm()
   }
 
-  const total = sumPorsi(rows)
+  const total = sumPorsiDisplay(rows)
   const selectedSchool = schools.find((s) => s.id === sekolahId)
 
   return (
