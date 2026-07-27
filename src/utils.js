@@ -25,3 +25,14 @@ export function tanggalIndonesia(isoDate) {
 export function sumPorsi(rows) {
   return rows.reduce((total, r) => total + (Number(r.jumlahPorsi) || 0), 0)
 }
+
+// Sama seperti sumPorsi, tapi untuk ditampilkan: kalau semua baris belum
+// diisi porsinya, kembalikan string kosong (bukan 0) supaya kolom Total
+// tidak menyesatkan seolah-olah memang 0 porsi.
+export function sumPorsiDisplay(rows) {
+  const adaYangDiisi = rows.some(
+    (r) => r.jumlahPorsi !== '' && r.jumlahPorsi !== null && r.jumlahPorsi !== undefined
+  )
+  if (!adaYangDiisi) return ''
+  return sumPorsi(rows)
+}
