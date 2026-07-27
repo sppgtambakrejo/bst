@@ -1,9 +1,10 @@
 import React, { useState, useMemo } from 'react'
 import { tanggalIndonesia, sumPorsi } from '../utils.js'
 
-export default function SuratJalanList({ docs, schools, onEdit, onDelete, onPrint }) {
+export default function SuratJalanList({ docs, schools, onEdit, onDelete, onPrint, onBulkEditDate }) {
   const [selected, setSelected] = useState(() => new Set())
   const [filterTanggal, setFilterTanggal] = useState('')
+  const [bulkTanggal, setBulkTanggal] = useState('')
 
   const schoolName = (id) => schools.find((s) => s.id === id)?.nama || '(sekolah tidak ditemukan)'
 
@@ -35,6 +36,24 @@ export default function SuratJalanList({ docs, schools, onEdit, onDelete, onPrin
     }
     const order = filtered.filter((d) => selected.has(d.id)).map((d) => d.id)
     onPrint(order)
+  }
+
+  function handleBulkEditDate() {
+    if (selected.size === 0) {
+      alert('Pilih minimal satu surat jalan untuk diubah tanggalnya.')
+      return
+    }
+    if (!bulkTanggal) {
+      alert('Pilih tanggal baru terlebih dahulu.')
+      return
+    }
+    const jumlah = selected.size
+    if (!confirm(`Ubah tanggal ${jumlah} surat jalan menjadi ${tanggalIndonesia(bulkTanggal)}?`)) {
+      return
+    }
+    onBulkEditDate(Array.from(selected), bulkTanggal)
+    setSelected(new Set())
+    setBulkTanggal('')
   }
 
   return (
@@ -73,6 +92,22 @@ export default function SuratJalanList({ docs, schools, onEdit, onDelete, onPrin
               🖨 Cetak yang Dipilih
             </button>
           </div>
+
+          {selected.size > 0 && (
+            <div className="list-toolbar bulk-edit-tanggal">
+              <label className="filter-tanggal">
+                <span>Ubah tanggal {selected.size} terpilih menjadi:</span>
+                <input
+                  type="date"
+                  value={bulkTanggal}
+                  onChange={(e) => setBulkTanggal(e.target.value)}
+                />
+              </label>
+              <button type="button" className="btn-secondary" onClick={handleBulkEditDate}>
+                📅 Terapkan Tanggal
+              </button>
+            </div>
+          )}
 
           <div className="doc-list">
             {filtered.map((d) => (
