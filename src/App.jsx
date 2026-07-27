@@ -75,6 +75,11 @@ export default function App() {
     setDocs(next)
   }
 
+  function handleBulkEditDate(ids, tanggalBaru) {
+    const next = db.bulkUpdateTanggalSuratJalan(ids, tanggalBaru)
+    setDocs(next)
+  }
+
   function handleSaveSppg(info) {
     db.saveSppgInfo(info)
     setSppg(info)
@@ -159,6 +164,7 @@ export default function App() {
             onEdit={handleEditDoc}
             onDelete={handleDeleteDoc}
             onPrint={(ids) => setPrintIds(ids)}
+            onBulkEditDate={handleBulkEditDate}
           />
         )}
         {tab === 'sekolah' && (
