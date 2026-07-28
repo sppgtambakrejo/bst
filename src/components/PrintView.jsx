@@ -3,6 +3,7 @@ import { hariIndonesia, tanggalIndonesia, sumPorsiDisplay } from '../utils.js'
 
 export default function PrintView({ docs, schools, sppg, onBack }) {
   const schoolName = (id) => schools.find((s) => s.id === id)?.nama || ''
+  const jenisTujuan = (id) => schools.find((s) => s.id === id)?.jenis || 'sekolah'
 
   return (
     <div className="print-wrapper">
@@ -16,7 +17,11 @@ export default function PrintView({ docs, schools, sppg, onBack }) {
         <span className="hint">{docs.length} surat jalan siap dicetak</span>
       </div>
 
-      {docs.map((doc) => (
+      {docs.map((doc) => {
+        const jenis = jenisTujuan(doc.sekolahId)
+        const labelKelompok = jenis === 'posyandu' ? 'Kelompok Sasaran' : 'Kelas'
+        const labelPihak = jenis === 'posyandu' ? 'Pihak Posyandu,' : 'Pihak Sekolah,'
+        return (
         <section className="print-page" key={doc.id}>
           <header className="print-header">
             <img src="./logo-full-bw.png" alt="Logo Badan Gizi Nasional" className="print-logo" />
@@ -72,7 +77,7 @@ export default function PrintView({ docs, schools, sppg, onBack }) {
             <thead>
               <tr>
                 <th rowSpan={2} className="th-nowrap">No.</th>
-                <th rowSpan={2}>Kelas</th>
+                <th rowSpan={2}>{labelKelompok}</th>
                 <th rowSpan={2}>Jumlah Porsi</th>
                 <th colSpan={2}>Jumlah Alat Makan</th>
                 <th rowSpan={2}>Keterangan</th>
@@ -126,7 +131,7 @@ export default function PrintView({ docs, schools, sppg, onBack }) {
               <tr>
                 <td className="sig-col">Ahli Gizi,</td>
                 <td className="sig-col">Koordinator Lapangan,</td>
-                <td className="sig-col">Pihak Sekolah,</td>
+                <td className="sig-col">{labelPihak}</td>
               </tr>
               <tr className="sig-space-row">
                 <td className="sig-col"></td>
@@ -161,7 +166,8 @@ export default function PrintView({ docs, schools, sppg, onBack }) {
             </table>
           </div>
         </section>
-      ))}
+        )
+      })}
     </div>
   )
 }
