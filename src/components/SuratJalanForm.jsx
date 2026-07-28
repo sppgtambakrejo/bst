@@ -149,10 +149,10 @@ export default function SuratJalanForm({ schools, editingDoc, onSaved, onCancelE
 
           {selectedSchool && (
             <>
-              <h3>Daftar Kelas &amp; Porsi</h3>
+              <h3>Daftar {selectedSchool.jenis === 'posyandu' ? 'Kelompok Sasaran' : 'Kelas'} &amp; Porsi</h3>
               <div className="rows-editor">
                 <div className="rows-editor-head">
-                  <span>Kelas</span>
+                  <span>{selectedSchool.jenis === 'posyandu' ? 'Kelompok Sasaran' : 'Kelas'}</span>
                   <span>Jumlah Porsi</span>
                   <span>Alat Sebelum</span>
                   <span>Alat Sesudah</span>
